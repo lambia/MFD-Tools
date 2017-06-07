@@ -23,10 +23,12 @@ def main():
 	
 def convert_all():
   for thisfile in os.listdir(argv[2]):
+    # There is no "KO", but if there are troubles will be printed out just after the name of the file
+    print("[OK] - "+thisfile)
     convert_one(argv[2]+"/"+thisfile,argv[3]+"/"+thisfile+".mfd")
 
 def convert_one(fFrom,fTo):
-  # TODO: Check if the dump is comple (has all sectors and no unknown data)
+  # TODO: Check if the dump has all sectors and no unknown data
   # and if not, create the missing data.
   # (0x00 for data, 0xFF for keys and 0x078069)
 
